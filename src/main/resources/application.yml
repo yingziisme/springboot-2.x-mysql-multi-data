@@ -1,0 +1,41 @@
+spring:
+  #mysql≈‰÷√
+  datasource:
+    aaadb:
+      jdbc-url: jdbc:mysql://localhost:3306/aaadb1?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      hikari:
+        minimum-idle: 1
+        maximum-pool-size: 100
+        auto-commit: true
+        idle-timeout: 30000
+        pool-name: AdvZuulHikariCP
+        max-lifetime: 1800000
+        connection-timeout: 30000
+    catdb:
+      jdbc-url: jdbc:mysql://localhost:3306/catdb?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      hikari:
+        minimum-idle: 1
+        maximum-pool-size: 100
+        auto-commit: true
+        idle-timeout: 30000
+        pool-name: AdvZuulHikariCP
+        max-lifetime: 1800000
+        connection-timeout: 30000
+  #jpa≈‰÷√
+  jpa:
+    database: mysql
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+server:
+  port: 10001
